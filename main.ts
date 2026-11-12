@@ -58,7 +58,7 @@ const edges = task.size.edges;
 const binWidth = edges.length > 1 ? edges[1]! - edges[0]! : 0.05;
 
 // The last mark's largest coins, in rank order.
-const MAXC = 140;
+const MAXC = 140.0;
 const chart = [...cut.rows].sort((a, b) => a.rank - b.rank).slice(0, MAXC);
 const prevByMint = new Map<string, Row>();
 if (prev) for (const r of prev.rows) prevByMint.set(r.mint, r);
@@ -119,10 +119,10 @@ function gauss(): number {
 
 const M = 12000;
 const K = 8; // simulated competitive newcomers per read
-const BIRTH = 5.5; // competitive priced newcomers per minute
-const XMIN = 100; // SOL
-const ALPHA = 1.85; // Pareto tail of newcomer caps at a read
-const RHO = 0.25;
+const BIRTH = 6.50; // competitive priced newcomers per minute
+const XMIN = 100.0; // SOL
+const ALPHA = 1.700; // Pareto tail of newcomer caps at a read
+const RHO = 0.2500;
 
 // counts[i * places + k] = simulations in which existing coin i is at place k,
 // summed over the seven reads.
